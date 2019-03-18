@@ -9,13 +9,12 @@ namespace SnakeGame
     public class Berry
     {
         private Random _randomizer = new Random();
-        private readonly Options _options;
+        private readonly Options _options = new Options();
         public int _currentXPosition;
         public int _currentYPosition;
 
-        public Berry(Options options)
+        public Berry()
         {
-            _options = options;
             PutBerryAtRandomPosition();
         }
 

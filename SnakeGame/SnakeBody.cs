@@ -8,16 +8,14 @@ namespace SnakeGame
 {
     class SnakeBody
     {
-        private readonly Options _options;
+        private readonly Options _options = new Options();
 
-        public SnakeBody(Options options)
+        public SnakeBody()
         {
             int[] xPos = new int[50];
             xPos[0] = 35;
             int[] yPos = new int[50];
             yPos[0] = 20;
-
-            _options = options;
             Render(BerrysEaten, xPos, yPos, out xPos, out yPos);
         }
 

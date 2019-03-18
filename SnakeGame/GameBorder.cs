@@ -8,13 +8,12 @@ namespace SnakeGame
 {
     public class GameBorder
     {
-        private readonly Options _options;
+        private readonly Options _options = new Options();
 
-        public GameBorder(Options options)
+        public GameBorder()
         {
-            _options = options;
-            Console.WindowHeight = options.BoardHeight;
-            Console.WindowWidth = options.BoardWidth;
+            Console.WindowHeight = _options.BoardHeight;
+            Console.WindowWidth = _options.BoardWidth;
         }
 
         public void Clear(Options options)
