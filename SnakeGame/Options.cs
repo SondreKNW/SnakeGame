@@ -14,6 +14,12 @@ namespace SnakeGame
 
         public string Block { get; set; } = "■";
 
+        public string SnakeBody { get; set; } = "▲";
+
+        public string Berry { get; set; } = "Ó";
+
+        public string SnakeHead { get; set; } = "♦";
+
         public ConsoleColor BorderColor { get; set; } = ConsoleColor.DarkMagenta;
 
         public ConsoleColor BerryColor { get; set; } = ConsoleColor.DarkRed;

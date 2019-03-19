@@ -25,10 +25,10 @@ namespace SnakeGame
         }
 
         public void Render()
-        {
-            Console.SetCursorPosition(_currentXPosition, _currentYPosition);
-            Console.ForegroundColor = _options.BerryColor;
-            Console.Write(_options.Block);
+        {          
+                Console.SetCursorPosition(_currentXPosition, _currentYPosition);
+                Console.ForegroundColor = _options.BerryColor;
+                Console.Write(_options.Berry);
         }
     }
 }

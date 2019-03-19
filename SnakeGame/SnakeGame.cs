@@ -30,7 +30,6 @@ namespace SnakeGame
 
         public void Play()
             {
-
             var xPosBody = new List<int>();
             var yPosBody = new List<int>();
 
@@ -60,13 +59,12 @@ namespace SnakeGame
                     for (int i = 0; i < xPosBody.Count(); i++)
                     {
                         SetCursorPosition(xPosBody[i], yPosBody[i]);
-                        Write(_options.Block);
+                    Write(_options.SnakeBody);
                         if (xPosBody[i] == _snakeHead.XPos && yPosBody[i] == _snakeHead.YPos)
                         {
                             gameover = true;
                         }
                     }
-
 
                     // How often the game checks movement
                     var sw = Stopwatch.StartNew();
@@ -104,18 +102,16 @@ namespace SnakeGame
                     
                     // Creates the "Game Over" screen
                     if (gameover)
-                    {
-                    // Game over screen, shows score based on the lenght of your snake
-                    SetCursorPosition(_options.BoardWidth / 2, _options.BoardHeight / 2);
+                    {                   
+                    SetCursorPosition(_options.BoardWidth / 13, _options.BoardHeight / 2);
                     WriteLine("Game over, the snake had an accident. Your score is: " + BerrysEaten * 100);
-                    SetCursorPosition(_options.BoardWidth / 2, _options.BoardHeight / 2 + 1);
+                    SetCursorPosition(_options.BoardWidth / 13, _options.BoardHeight / 2 + 1);
                     WriteLine("Press enter to continue.");
                     ReadLine();
                     BerrysEaten = 0;
                     Clear();
                     return;
-                    }
-                
+                    }                
             }
         }
         // Checks arrowkeys for movement and stops you from walking into your back

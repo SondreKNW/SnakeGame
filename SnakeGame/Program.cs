@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Speech.Synthesis;
 using System.Threading;
 using static System.Console;
-using System.Diagnostics;
-using System.Speech.Synthesis;
 
 namespace SnakeGame
 {
@@ -14,7 +9,6 @@ namespace SnakeGame
     {
         static void Main(string[] args)
         {
-            var game = new SnakeGame();          
             var border = new Border();
             var directions = new Directions();
 
@@ -27,42 +21,41 @@ namespace SnakeGame
             do
             {
                 ShowMenu(out userAction);
-            
 
-            
-            switch (userAction)
-            {
-                case "1":
-                case "d":
-                case "directions":
-                    directions.Show(border);
-                    ShowMenu(out userAction);
-                    break;
+                switch (userAction)
+                {
+                    case "1":
+                    case "d":
+                    case "directions":
+                        directions.Show(border);
+                        ShowMenu(out userAction);
+                        break;
 
-                case "2":
-                case "p":
-                case "play":   
-                        game.Play();
+                    case "2":
+                    case "p":
+                    case "play":
+                        new SnakeGame().Play();
                         ShowMenu(out userAction);
                         break;
 
                     case "3":
-                case "e":
-                case "exit":
-                    isStayInMenu = false;
-                    Clear();
+                    case "e":
+                    case "exit":
+                        isStayInMenu = false;
+                        Clear();
                         Environment.Exit(0);
-                    break;
+                        break;
 
-                default:
-                    WriteLine("Your input was not understood, press enter and try again.");
-                    ReadLine();
-                    Clear();
-                    ShowMenu(out userAction);
-                    break;
+                    default:
+                        WriteLine("Your input was not understood, press enter and try again.");
+                        ReadLine();
+                        Clear();
+                        ShowMenu(out userAction);
+                        break;
+                }
+
             }
-
-            } while (isStayInMenu);
+            while (isStayInMenu);
         }
 
         #region Menu
@@ -139,7 +132,7 @@ namespace SnakeGame
  \__/      \         /       \        /
   |         ~~~~~~~~~         ~~~~~~~~
   ^";
-            ForegroundColor = ConsoleColor.Yellow; 
+            ForegroundColor = ConsoleColor.Yellow;
             WriteLine(menu1);
             Thread.Sleep(100);
             Clear();
@@ -160,7 +153,7 @@ namespace SnakeGame
             toSpeak.Speak("The Snake Game!");
 
             userAction = ReadLine().ToLower();
-        }
+        } 
         #endregion
     }
 }

@@ -14,7 +14,6 @@ namespace SnakeGame
         {
         }
 
-
         public int Width => _options.BoardWidth - 1;
 
         public int Height => _options.BoardHeight - 1;
