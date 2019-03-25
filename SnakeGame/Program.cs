@@ -13,7 +13,6 @@ namespace SnakeGame
             var border = new Border(options);
             var directions = new Directions();
             
-
             string userAction = "";
 
             bool isStayInMenu = true;
@@ -40,6 +39,8 @@ namespace SnakeGame
                     case "e":
                         isStayInMenu = false;
                         break;
+
+                       
                 }
 
             }

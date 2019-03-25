@@ -11,8 +11,7 @@ namespace SnakeGame
     class GameMenu
     {
         public GameMenu()
-            {
-
+        {
         }
 
         public void Render()

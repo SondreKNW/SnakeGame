@@ -23,7 +23,6 @@ namespace SnakeGame
         {
             Console.SetCursorPosition(XPos, YPos);
             Console.ForegroundColor = _options.HeadColor;
-            //Console.Write((char)2); 
             Console.Write(_options.SnakeHead);
         }
     }

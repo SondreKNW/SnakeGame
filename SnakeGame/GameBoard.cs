@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SnakeGame
 {
-    public class GameBorder
+    public class GameBoard
     {
         private readonly Options _options;
 
-        public GameBorder(Options options)
+        public GameBoard(Options options)
         {
             _options = options;
             Console.WindowHeight = _options.BoardHeight;
