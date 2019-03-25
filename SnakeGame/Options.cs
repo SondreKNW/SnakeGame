@@ -12,6 +12,8 @@ namespace SnakeGame
 
         public int BoardWidth { get; set; } = 64;
 
+        public double gameSpeed = 150;
+
         public string Block { get; set; } = "■";
 
         public string SnakeBody { get; set; } = "▲";

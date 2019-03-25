@@ -4,28 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using System.Diagnostics;
+using System.Diagnostics;   
 
 namespace SnakeGame
 {
     class SnakeGame
     {
-        private readonly Options _options = new Options();
-        private readonly Border _border = new Border();
-        private readonly Program.SnakeHead _snakeHead = new Program.SnakeHead();
-        private readonly Berry _berry = new Berry();
-        private readonly GameBorder _gameBorder = new GameBorder();
+        private Options _options;
+        private Border _border;
+        private SnakeHead _snakeHead;
+        private Berry _berry;
+        private GameBorder _gameBorder;
         private readonly SnakeBody _snakeBody = new SnakeBody();
-        private readonly Directions _directions = new Directions();
-
-        private double gameSpeed = 150;
+        private readonly Directions _directions = new Directions(); 
 
         private int BerrysEaten = 0;
 
         private bool gameover = false;
         
-        public SnakeGame()
+        public SnakeGame(Options options)
         {
+            _options = options;
+            
         }
 
         public void Play()
@@ -53,7 +53,7 @@ namespace SnakeGame
                     {
                         BerrysEaten++;
                         _berry.PutBerryAtRandomPosition();
-                        gameSpeed *= 0.925;
+                        _options.gameSpeed *= 0.925;
                     }
 
                     for (int i = 0; i < xPosBody.Count(); i++)
@@ -68,7 +68,7 @@ namespace SnakeGame
 
                     // How often the game checks movement
                     var sw = Stopwatch.StartNew();
-                    while (sw.ElapsedMilliseconds <= gameSpeed)
+                    while (sw.ElapsedMilliseconds <= _options.gameSpeed)
                     {
                         currentMovement = ReadMovement(currentMovement);
                     }

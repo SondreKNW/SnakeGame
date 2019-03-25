@@ -48,6 +48,7 @@
     <Compile Include="Border.cs" />
     <Compile Include="Directions.cs" />
     <Compile Include="GameBorder.cs" />
+    <Compile Include="GameMenu.cs" />
     <Compile Include="Movement.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="SnakeBody.cs" />

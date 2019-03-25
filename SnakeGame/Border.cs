@@ -8,10 +8,11 @@ namespace SnakeGame
 {
     public class Border
     {
-        private readonly Options _options = new Options();
+        private readonly Options _options;
 
-        public Border()
+        public Border(Options options)
         {
+            _options = options;
         }
 
         public int Width => _options.BoardWidth - 1;
